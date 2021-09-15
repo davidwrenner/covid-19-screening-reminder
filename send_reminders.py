@@ -9,12 +9,10 @@ from env import \
 
 number_re = re.compile(r"^\+[\d]{11}$")
 twilio = Client(TWILIO_ACCT_SID, TWILIO_AUTH_TOKEN)
-message_content = \
-    """
-    Good morning! Remember to complete
-    your daily Covid-19 screening:
-    screening.wustl.edu 
-    """
+message_content = """
+Good morning! Remember to complete your daily Covid-19 screening:
+screening.wustl.edu 
+"""
 
 
 def send_message(target_number, message_body):
