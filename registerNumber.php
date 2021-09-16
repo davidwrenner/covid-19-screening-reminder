@@ -47,6 +47,13 @@ if (!preg_match("/^[0-1]{7}$/", $days)) {
 	));
 	exit;
 }
+if (!strcmp($days, "0000000")) {
+    echo json_encode(array(
+		"success" => false,
+		"message" => "Must sign up for at least one day: ".$days
+	));
+	exit;
+}
 
 // translate time to be compatible with Twilio
 // i.e. 000-000-0000 --> +10000000000
