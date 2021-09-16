@@ -10,21 +10,37 @@ $days = (string) $post_obj["days"];
 $fp = "/home/davidwrenner/covid-reminder/numbers";
 
 // input validation
-if (!preg_match("/^[\d]{3}-[\d]{3}-[\d]{4}$/", $number)){
+if (!preg_match("/^[\d]{3}-[\d]{3}-[\d]{4}$/", $number)) {
     echo json_encode(array(
 		"success" => false,
 		"message" => "Bad input for phone number: ".$number
 	));
 	exit;
 }
-if (!preg_match("/^[\d]{2}:[\d]{2}$/", $time)){
+if (!preg_match("/^[\d]{2}:[\d]{2}$/", $time)) {
     echo json_encode(array(
 		"success" => false,
-		"message" => "Bad input for phone number: ".$time
+		"message" => "Bad input for time: ".$time
 	));
 	exit;
 }
-if (!preg_match("/^[0-1]{7}$/", $days)){
+$hour = intval(substr($time, 0, 1));
+$minute = intval(substr($time, 3, 2));
+if ($hour > 23 || $hour < 0) {
+    echo json_encode(array(
+		"success" => false,
+		"message" => "Bad hour input for time: ".$time
+	));
+	exit;
+}
+if ($minute > 59 || $minute < 0) {
+    echo json_encode(array(
+		"success" => false,
+		"message" => "Bad minute input for time: ".$time
+	));
+	exit;
+}
+if (!preg_match("/^[0-1]{7}$/", $days)) {
     echo json_encode(array(
 		"success" => false,
 		"message" => "Bad input for days of the week: ".$days
