@@ -55,18 +55,6 @@ def main():
         minute = 0 if m.group("minute") == "00" else int(m.group("minute").lstrip("0"))
         days = m.group("days")
 
-        with open(LOG_FP, "a") as f:
-            f.write(
-                f"""
-                day_bool: {bool(int(days[current_weekday]))}
-                hour_bool: {current_hour == hour} 
-                min_bool: {current_minute == minute}\n
-                day: {current_weekday}, {days[current_weekday]}
-                hour: {current_hour}, {hour}
-                min: {current_minute}, {minute}
-                """
-            )
-
         if bool(int(days[current_weekday])) \
                 and current_hour == hour \
                 and current_minute == minute:

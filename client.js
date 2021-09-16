@@ -23,14 +23,12 @@ function submitRegistration() {
         })
     .then(result => result.json())
     .then(data => {
-        console.log(data.success ? "Successfully registered" : `Error registering: ${data.message}`);
         if(data.success){
-            alert("successfully registered");
             let inner = document.getElementsByClassName("inner-container");
             inner[0].textContent = "Thanks! You've successfully registered for daily screening reminders.";
         }
         else{
-            alert("unable to register");
+            alert("Unable to register with the provided information.");
         }
     })
     .catch(err => console.error(err));
