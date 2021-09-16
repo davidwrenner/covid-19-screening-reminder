@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <style>
+        body {
+            text-align: center;
+            background-color: rgb(15, 70, 96);
+        }
+        .container{
+            height: 700px;
+            width: 60%;
+            margin-top: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            border-style: solid;
+            border-color: black;
+            border-width: 2px;
+            border-radius: 3px;
+            background-color: white;
+            overflow: scroll;
+
+        }
+        .inner-container{
+            height: 600px;
+            width: 45%;
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            border-style: none;
+            background-color: white;
+            text-align: left;
+        }
+        h1{
+            margin-top: 50px;
+        }
+        .btn{
+            width: 100%;
+        }
+        .form-group{
+            text-align: left;
+        }
+    </style>
+    <title>Reminder Registration Portal</title>
+</head>
+<body>
+<div class="container">
+    <h1>COVID-19 Screening Reminder</h1>
+    <div class="inner-container">
+        <p id="about">
+            It's easy to forget to complete WashU's COVID-19 screening
+            every day before coming to campus.
+            By signing up for this service, you will be sent a helpful reminder each day
+            via text message, helping to keep you and your peers safe.
+        </p>
+        <form>
+        <div class="form-group">
+            <label for="phone-number">Phone number</label>
+            <input type="tel" class="form-control" id="phone-number" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+        </div>
+        <div class="form-group">
+            <label for="time">Reminder time</label>
+            <input type="time" class="form-control" id="time" required>
+        </div>
+
+        <div class="form-group">
+        <label for="days-of-week">Days of the week</label>
+        <div id="days-of-week">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="day0" value="0">
+            <label class="form-check-label" for="day0">S</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="day1" value="1" checked>
+            <label class="form-check-label" for="day1">M</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="day2" value="2" checked>
+            <label class="form-check-label" for="day2">T</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="day3" value="3" checked>
+            <label class="form-check-label" for="day3">W</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="day4" value="4" checked>
+            <label class="form-check-label" for="day4">Th</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="day5" value="5" checked>
+            <label class="form-check-label" for="day5">F</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="day6" value="6">
+            <label class="form-check-label" for="day6">S</label>
+        </div></div></div>
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+    </div>
+</div>
+
+
+
+</body>
+</html>
