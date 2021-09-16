@@ -21,7 +21,7 @@ function submitRegistration() {
             body: JSON.stringify(data),
             headers: { 'content-type': 'application/json' }
         })
-    .then(res => res.json())
+    .then(result => result.json())
     .then(data => {
         console.log(data.success ? "Successfully registered" : `Error registering: ${data.message}`);
         if(data.success){
